@@ -6,7 +6,7 @@ notifications:
     email: false
 
 jdk:
-  - oraclejdk10
+  - openjdk10
 
 install:
 - ./gradlew clean test
