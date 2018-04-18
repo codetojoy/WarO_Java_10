@@ -1,0 +1,14 @@
+language: java
+sudo: false
+dist: trusty
+
+notifications:
+    email: false
+
+jdk:
+  - oraclejdk10
+
+install:
+- ./gradlew clean test
+- ./gradlew :org.peidevs.waro.main:run
+
