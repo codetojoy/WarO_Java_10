@@ -1,0 +1,30 @@
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'org.peidevs.waro.Main'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.guava:guava:24.1-jre'
+
+    // illegal access is fixed in 5.1, but currently rc
+    compile 'org.springframework:spring-context:5.0.5.RELEASE'
+
+    testCompile 'junit:junit:4.12'
+}
+
+installDist.doFirst {
+    ant.delete(dir: project.stagingDir)
+}
+
+installDist {
+    into project.stagingDir
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.5.1'
+}
