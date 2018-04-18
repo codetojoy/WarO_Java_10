@@ -48,20 +48,20 @@ public class GameTest {
         var strategy = new NextCard();
         var players = new ArrayList<Player>();
         
-        var h1 = new Hand(Arrays.asList(new Integer[]{1,5,9}));
+        var h1 = new Hand(List.of(1,5,9));
         var p1 = new Player("p1", strategy, maxCard, h1);
 
-        var h2 = new Hand(Arrays.asList(new Integer[]{4,8,6}));
+        var h2 = new Hand(List.of(4,8,6));
         var p2 = new Player("p2", strategy, maxCard, h2);
 
-        var h3 = new Hand(Arrays.asList(new Integer[]{7,2,3}));
+        var h3 = new Hand(List.of(7,2,3));
         var p3 = new Player("p3", strategy, maxCard, h3);
         
         players.add(p1);
         players.add(p2);
         players.add(p3);
         
-        var kitty = new Hand(Arrays.asList(new Integer[]{10,11,12}));
+        var kitty = new Hand(List.of(10,11,12));
         
         // test
         var newPlayers = new Game(numCards, false).play(kitty, players.stream()).collect(toList());

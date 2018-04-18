@@ -30,10 +30,10 @@ public class Round implements UnaryOperator<Stream<Player>> {
         
         var winner = winningBid.getBidder().getName();
         
-        Stream<Player> result = Stream.concat( Stream.of(newWinner),
-                                               bids.stream()
-                                                   .filter(b -> ! b.getBidder().getName().equals(winner))
-                                                   .map(b -> b.getBidder().losesRound(b)));
+        var result = Stream.concat( Stream.of(newWinner),
+                                    bids.stream()
+                                        .filter(b -> ! b.getBidder().getName().equals(winner))
+                                        .map(b -> b.getBidder().losesRound(b)));
 
         return result;
     }

@@ -36,7 +36,7 @@ public class Dealer {
         int numCardsPerHand = numCards / numGroups;
                 
         // TODO: is there a way to partition using Java 8 ?
-        Stream<Hand> hands = Lists.partition(deck, numCardsPerHand).stream().map(cards -> new Hand(cards));
+        var hands = Lists.partition(deck, numCardsPerHand).stream().map(cards -> new Hand(cards));
         
         return hands;
     }

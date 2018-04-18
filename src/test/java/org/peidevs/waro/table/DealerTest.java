@@ -21,13 +21,13 @@ public class DealerTest {
         var strategy = new MaxCard();
         var players = new ArrayList<Player>();
         
-        var h1 = new Hand(Arrays.asList(new Integer[]{1,2,3}));
+        var h1 = new Hand(List.of(1,2,3));
         var p1 = new Player("p1", strategy, maxCard, h1);
 
-        var h2 = new Hand(Arrays.asList(new Integer[]{4,5,6}));
+        var h2 = new Hand(List.of(4,5,6));
         var p2 = new Player("p2", strategy, maxCard, h2);
 
-        var h3 = new Hand(Arrays.asList(new Integer[]{7,8,9}));
+        var h3 = new Hand(List.of(7,8,9));
         var p3 = new Player("p3", strategy, maxCard, h3);
         
         players.add(p1);
