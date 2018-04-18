@@ -10,7 +10,7 @@ public class MinCardTest {
 
     @Test
     public void testSelectCard() {
-        Strategy strategy = new MinCard();
+        var strategy = new MinCard();
         int maxCard = 50;
         int prizeCard = 10;
         int handSize = 20;

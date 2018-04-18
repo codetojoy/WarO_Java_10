@@ -14,28 +14,28 @@ public class DealerTest {
 
     @Test
     public void testDeal_Table_Basic() {
-        Dealer dealer = new Dealer();
+        var dealer = new Dealer();
 
         int numCards = 12;
         int maxCard = numCards;
-        Strategy strategy = new MaxCard();
-        List<Player> players = new ArrayList<>();
+        var strategy = new MaxCard();
+        var players = new ArrayList<Player>();
         
-        Hand h1 = new Hand(Arrays.asList(new Integer[]{1,2,3}));
-        Player p1 = new Player("p1", strategy, maxCard, h1);
+        var h1 = new Hand(Arrays.asList(new Integer[]{1,2,3}));
+        var p1 = new Player("p1", strategy, maxCard, h1);
 
-        Hand h2 = new Hand(Arrays.asList(new Integer[]{4,5,6}));
-        Player p2 = new Player("p2", strategy, maxCard, h2);
+        var h2 = new Hand(Arrays.asList(new Integer[]{4,5,6}));
+        var p2 = new Player("p2", strategy, maxCard, h2);
 
-        Hand h3 = new Hand(Arrays.asList(new Integer[]{7,8,9}));
-        Player p3 = new Player("p3", strategy, maxCard, h3);
+        var h3 = new Hand(Arrays.asList(new Integer[]{7,8,9}));
+        var p3 = new Player("p3", strategy, maxCard, h3);
         
         players.add(p1);
         players.add(p2);
         players.add(p3);
 
         // test (use new numCards value)
-        Table table = dealer.deal(20, players);
+        var table = dealer.deal(20, players);
 
         assertEquals(5, table.getKitty().cardsAsIntStream().count());
         assertEquals(5, table.getPlayers().get(0).getNumCardsInHand());
@@ -45,14 +45,14 @@ public class DealerTest {
 
     @Test
     public void testDeal_Basic() {
-        Dealer dealer = new Dealer();
+        var dealer = new Dealer();
         int numCards = 40;
         int numPlayers = 4;
 
         // test
         Stream<Hand> hands = dealer.deal(numCards, numPlayers);
         
-        List<Hand> handList = hands.collect(toList());
+        var handList = hands.collect(toList());
         assertEquals(8, handList.get(0).cardsAsIntStream().count());
         assertEquals(8, handList.get(1).cardsAsIntStream().count());
         assertEquals(8, handList.get(2).cardsAsIntStream().count());
@@ -62,7 +62,7 @@ public class DealerTest {
 
     @Test(expected=IllegalArgumentException.class)
     public void testDeal_Uneven() {
-        Dealer dealer = new Dealer();
+        var dealer = new Dealer();
         int numCards = 42;
         int numPlayers = 4;
 
@@ -72,11 +72,11 @@ public class DealerTest {
 
     @Test
     public void testBuildShuffledDeck() {
-        Dealer dealer = new Dealer();
+        var dealer = new Dealer();
         int numCards = 4;
         
         // test
-        List<Integer> result = dealer.buildShuffledDeck(numCards);
+        var result = dealer.buildShuffledDeck(numCards);
         
         assertEquals(4, result.size());
         assertTrue(result.contains(1));

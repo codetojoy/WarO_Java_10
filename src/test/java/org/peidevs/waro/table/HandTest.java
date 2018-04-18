@@ -11,22 +11,22 @@ public class HandTest {
     
     @Test
     public void testSelect_Basic() {
-        List<Integer> cards = IntStream.range(1,10+1).boxed().collect(toList());
-        Hand hand = new Hand(cards);
+        var cards = IntStream.range(1,10+1).boxed().collect(toList());
+        var hand = new Hand(cards);
         
         // test
-        Hand result = hand.select(5);
+        var result = hand.select(5);
         
         assertEquals(9, result.cardsAsIntStream().boxed().count());
     }
     
     @Test(expected=IllegalArgumentException.class)
     public void testSelect_Illegal() {
-        List<Integer> cards = IntStream.range(1,10+1).boxed().collect(toList());
-        Hand hand = new Hand(cards);
+        var cards = IntStream.range(1,10+1).boxed().collect(toList());
+        var hand = new Hand(cards);
         
         // test
-        Hand result = hand.select(18);
+        var result = hand.select(18);
     }
     
 }

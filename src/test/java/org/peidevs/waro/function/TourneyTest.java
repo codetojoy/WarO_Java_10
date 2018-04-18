@@ -17,19 +17,19 @@ public class TourneyTest {
         int numGames = 3;
         int numCards = 12;
         int maxCard = numCards;
-        Strategy strategy = new NextCard();
-        List<Player> players = new ArrayList<>();
+        var strategy = new NextCard();
+        var players = new ArrayList<Player>();
         
-        Player p1 = new Player("p1", strategy, maxCard, new Hand());
-        Player p2 = new Player("p2", strategy, maxCard, new Hand());
-        Player p3 = new Player("p3", strategy, maxCard, new Hand());
+        var p1 = new Player("p1", strategy, maxCard, new Hand());
+        var p2 = new Player("p2", strategy, maxCard, new Hand());
+        var p3 = new Player("p3", strategy, maxCard, new Hand());
         
         players.add(p1);
         players.add(p2);
         players.add(p3);
                 
         // test
-        List<Player> newPlayers = new Tourney(numCards, numGames, false).apply(players);
+        var newPlayers = new Tourney(numCards, numGames, false).apply(players);
         
         assertEquals(3, newPlayers.size());
         assertEquals(0, newPlayers.get(0).getNumCardsInHand());

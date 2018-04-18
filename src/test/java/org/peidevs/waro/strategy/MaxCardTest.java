@@ -11,7 +11,7 @@ public class MaxCardTest {
 
     @Test
     public void testSelectCard() {
-        Strategy strategy = new MaxCard();
+        var strategy = new MaxCard();
         int maxCard = 50;
         int prizeCard = 10;
         int handSize = 20;

@@ -16,19 +16,19 @@ public class GameTest {
     public void testApply_Basic() {
         int numCards = 12;
         int maxCard = numCards;
-        Strategy strategy = new NextCard();
-        List<Player> players = new ArrayList<>();
+        var strategy = new NextCard();
+        var players = new ArrayList<Player>();
         
-        Player p1 = new Player("p1", strategy, maxCard, new Hand());
-        Player p2 = new Player("p2", strategy, maxCard, new Hand());
-        Player p3 = new Player("p3", strategy, maxCard, new Hand());
+        var p1 = new Player("p1", strategy, maxCard, new Hand());
+        var p2 = new Player("p2", strategy, maxCard, new Hand());
+        var p3 = new Player("p3", strategy, maxCard, new Hand());
         
         players.add(p1);
         players.add(p2);
         players.add(p3);
                 
         // test
-        List<Player> newPlayers = new Game(numCards, false).apply(players);
+        var newPlayers = new Game(numCards, false).apply(players);
         
         assertEquals(3, newPlayers.size());
         assertEquals(0, newPlayers.get(0).getNumCardsInHand());
@@ -45,26 +45,26 @@ public class GameTest {
     public void testPlay_Basic() {
         int numCards = 12;
         int maxCard = numCards;
-        Strategy strategy = new NextCard();
-        List<Player> players = new ArrayList<>();
+        var strategy = new NextCard();
+        var players = new ArrayList<Player>();
         
-        Hand h1 = new Hand(Arrays.asList(new Integer[]{1,5,9}));
-        Player p1 = new Player("p1", strategy, maxCard, h1);
+        var h1 = new Hand(Arrays.asList(new Integer[]{1,5,9}));
+        var p1 = new Player("p1", strategy, maxCard, h1);
 
-        Hand h2 = new Hand(Arrays.asList(new Integer[]{4,8,6}));
-        Player p2 = new Player("p2", strategy, maxCard, h2);
+        var h2 = new Hand(Arrays.asList(new Integer[]{4,8,6}));
+        var p2 = new Player("p2", strategy, maxCard, h2);
 
-        Hand h3 = new Hand(Arrays.asList(new Integer[]{7,2,3}));
-        Player p3 = new Player("p3", strategy, maxCard, h3);
+        var h3 = new Hand(Arrays.asList(new Integer[]{7,2,3}));
+        var p3 = new Player("p3", strategy, maxCard, h3);
         
         players.add(p1);
         players.add(p2);
         players.add(p3);
         
-        Hand kitty = new Hand(Arrays.asList(new Integer[]{10,11,12}));
+        var kitty = new Hand(Arrays.asList(new Integer[]{10,11,12}));
         
         // test
-        List<Player> newPlayers = new Game(numCards, false).play(kitty, players.stream()).collect(toList());
+        var newPlayers = new Game(numCards, false).play(kitty, players.stream()).collect(toList());
         
         assertEquals(3, newPlayers.size());
         assertEquals(0, newPlayers.get(0).getNumCardsInHand());
