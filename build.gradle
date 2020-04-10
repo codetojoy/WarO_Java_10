@@ -11,8 +11,7 @@ repositories {
 dependencies {
     compile 'com.google.guava:guava:24.1-jre'
 
-    // illegal access is fixed in 5.1, but currently rc
-    compile 'org.springframework:spring-context:5.0.5.RELEASE'
+    compile 'org.springframework:spring-context:5.2.5.RELEASE'
 
     testCompile 'junit:junit:4.12'
 }
@@ -23,8 +22,4 @@ installDist.doFirst {
 
 installDist {
     into project.stagingDir
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '3.5.1'
 }

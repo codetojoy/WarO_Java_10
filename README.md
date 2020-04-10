@@ -14,13 +14,14 @@ a Java submission for War-O as a code exercise
 To Build:
 ---------
 
-* requires JDK 10, Gradle 4.5+ (?)
+* requires JDK 10
 
 useful commands:
 
-* `gradle clean test`
-* `gradle run`
-* `gradle build`
+* `./gradlew clean test`
+    - on Windows, use `gradlew.bat`
+* `./gradlew run`
+* `./gradlew build`
 
 See test output in `~/build/reports/tests/index.html`
 
@@ -30,7 +31,8 @@ To Run:
 ---------
 
 * configure `src/main/java/org/peidevs/waro/config/Config.java`
-* `gradle run`
+* `./gradlew run`
+    - on Windows, use `gradlew.bat`
 
 Rules:
 ---------
