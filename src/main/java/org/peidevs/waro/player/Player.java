@@ -20,6 +20,15 @@ public class Player {
         this(name, strategy, maxCard, hand, new PlayerStats());
     }
 
+    // for testing:
+    public Player(String name, PlayerStats playerStats) {
+        this.name = name;
+        this.strategy = null;
+        this.maxCard = 5150;
+        this.hand = null;
+        this.playerStats = playerStats;
+    }
+
     private Player(String name, Strategy strategy, int maxCard, Hand hand, PlayerStats playerStats) {
         this.name = name;
         this.strategy = strategy;

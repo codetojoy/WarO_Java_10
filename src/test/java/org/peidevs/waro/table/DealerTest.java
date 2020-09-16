@@ -19,7 +19,6 @@ public class DealerTest {
         int numCards = 12;
         int maxCard = numCards;
         var strategy = new MaxCard();
-        var players = new ArrayList<Player>();
         
         var h1 = new Hand(List.of(1,2,3));
         var p1 = new Player("p1", strategy, maxCard, h1);
@@ -30,9 +29,7 @@ public class DealerTest {
         var h3 = new Hand(List.of(7,8,9));
         var p3 = new Player("p3", strategy, maxCard, h3);
         
-        players.add(p1);
-        players.add(p2);
-        players.add(p3);
+        var players = new ArrayList<Player>(List.of(p1, p2, p3));
 
         // test (use new numCards value)
         var table = dealer.deal(20, players);

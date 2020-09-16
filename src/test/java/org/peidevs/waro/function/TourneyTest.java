@@ -18,15 +18,12 @@ public class TourneyTest {
         int numCards = 12;
         int maxCard = numCards;
         var strategy = new NextCard();
-        var players = new ArrayList<Player>();
         
         var p1 = new Player("p1", strategy, maxCard, new Hand());
         var p2 = new Player("p2", strategy, maxCard, new Hand());
         var p3 = new Player("p3", strategy, maxCard, new Hand());
         
-        players.add(p1);
-        players.add(p2);
-        players.add(p3);
+        var players = new ArrayList<Player>(List.of(p1, p2, p3));
                 
         // test
         var newPlayers = new Tourney(numCards, numGames, false).apply(players);

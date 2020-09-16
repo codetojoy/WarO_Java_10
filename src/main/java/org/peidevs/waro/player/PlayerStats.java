@@ -9,7 +9,7 @@ public class PlayerStats {
         this(0,0,0);
     }
     
-    private PlayerStats(int total, int numGamesWon, int numRoundsWon) {
+    public PlayerStats(int total, int numGamesWon, int numRoundsWon) {
         this.total = total;
         this.numGamesWon = numGamesWon;
         this.numRoundsWon = numRoundsWon;
